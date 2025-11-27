@@ -27,8 +27,8 @@ To write a Java program that reads a month number (1–12) from the user and det
  ```
 /*
 Program to implement a conditional statement using Java
-Developed by: PRIYADHARSHINI S
-RegisterNumber: 212223240129
+Developed by: DHARSHAN D
+RegisterNumber: 212223230045 
 */
 ```
 
@@ -71,5 +71,6 @@ public class Main{
 ## RESULT:
 
 Thus, the Java program to determine the quarter of a given month using decision-making statements was executed successfully.
+
 
 
