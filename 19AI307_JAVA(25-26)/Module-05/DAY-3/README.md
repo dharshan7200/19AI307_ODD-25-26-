@@ -1,22 +1,24 @@
-# Ex.No:5(C)  FILE HANDLING USING JAVA
+# Ex.No:5(D) THREAD PRIORITY
+
 ## QUESTION:
+Write a java program for determine the priority and name of the current thread.
 
-Write a program to count the number of words in a file.
-
+Note : Read the threadname from the User
 
 ## AIM:
 
-To Write a program to count the number of words in a file.
-
+To Write a java program for determine the priority and name of the current thread.
 
 ## ALGORITHM :
 1.	Start the program.
 2.	Import the necessary package 'java.util'
-3.	Read a full line of text from the user and write it into a file using BufferedWriter.
-4.	Open the same file using BufferedReader to read its contents line by line.
-5.	For each line, trim it and split it into words using whitespace as the delimiter.
-6.	Count all valid words and accumulate the total word count.
-7.	Print the total number of words and close all streams properly.
+3.	Read a thread name from the user using Scanner.
+4.	Get the reference of the current running thread using Thread.currentThread().
+5.	Change the name of the current thread to the user-provided name.
+6.	Retrieve the current thread’s priority using getPriority().
+7.	Print the thread’s priority, updated name, and full thread information.
+
+
 
 
 
@@ -25,45 +27,32 @@ To Write a program to count the number of words in a file.
 ## PROGRAM:
  ```
 /*
-Program to implement a File Handling using Java
+Program to implement a Thread Priority Concept using Java
 Developed by: DHARSHAN D
 RegisterNumber:  212223230045
 */
 ```
+
 ```
-import java.io.*;
 import java.util.Scanner;
 
-public class WordCountFile {
+public class CurrentThreadInfo {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        String fileName = "input.txt";
 
-        try {
-            String input = sc.nextLine();
+        String threadName = sc.nextLine();
 
-            BufferedWriter writer = new BufferedWriter(new FileWriter(fileName));
-            writer.write(input);
-            writer.close();
+        Thread currentThread = Thread.currentThread();
 
-            BufferedReader reader = new BufferedReader(new FileReader(fileName));
-            int wordCount = 0;
-            String line;
-            while ((line = reader.readLine()) != null) {
-                String[] words = line.trim().split("\\s+"); 
-                if (!line.trim().isEmpty()) {
-                    wordCount += words.length;
-                }
-            }
-            reader.close();
+        currentThread.setName(threadName);
 
-            System.out.println("Number of words in the file: " + wordCount);
+        int priority = currentThread.getPriority();
 
-        } catch (IOException e) {
-            e.printStackTrace();
-        } finally {
-            sc.close();
-        }
+        System.out.println("Priority of Thread: " + priority);
+        System.out.println("Name of Thread: " + currentThread.getName());
+        System.out.println(currentThread);
+
+        sc.close();
     }
 }
 ```
@@ -75,10 +64,10 @@ public class WordCountFile {
 
 ## OUTPUT:
 
-<img width="1137" height="250" alt="image" src="https://github.com/user-attachments/assets/e0362fdd-71bc-483c-859e-bbfa808a59b7" />
+<img width="810" height="216" alt="image" src="https://github.com/user-attachments/assets/ca622a76-977c-4f2b-adbd-152f41676c8d" />
 
 
 ## RESULT:
 
-Thus, the program to count the number of words in a file executed successfully.
+Thus, the program to determine the priority and name of the current thread is executed successfully.
 
