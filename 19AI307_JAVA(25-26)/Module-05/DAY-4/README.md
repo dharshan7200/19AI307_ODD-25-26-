@@ -71,14 +71,14 @@ public class FixedThreadPoolExample {
 
 
 
-
-
-
-
-
 ## OUTPUT:
 
+<img width="436" height="450" alt="image" src="https://github.com/user-attachments/assets/30642057-d25c-4044-aa0e-35afc87daabe" />
 
 
 ## RESULT:
+Thus, the program to Read N numbers from user, use a fixed thread pool (size 3) to compute the sum of each number multiplied by 2 executed successfully.
+
+
+
 
